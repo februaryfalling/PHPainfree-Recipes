@@ -6,7 +6,8 @@
 	<body>
 <?php
         list($view,$id,$action) = explode('/', $Painfree->path);
-        if ( file_exists('view/' . $view . '.tpl') ) {
+	$sub_view = $Painfree->Root . 'templates/view/' . $view . '.tpl';
+        if ( file_exists($sub_view) ) {
                 include 'templates/view/' . $view . '.tpl';
         } else {
 		// home.tpl is the view we want to load if no view is defined
